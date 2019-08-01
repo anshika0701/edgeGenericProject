@@ -1,0 +1,42 @@
+{
+    "device": {
+        "name": "anshikaPi",
+        "description": "Connected to my mains at my workshop",
+        "owner": "5ce62aa9479b88211ca6d097",
+        "data": [
+            "temperature",
+            "humidity",
+            "cputemperature"
+        ],
+        "controls": [
+            "Led"
+        ]
+    },
+    "server": {
+        "register": "http://192.168.77.92:3000/device",
+        "sendData": "http://192.168.77.92:3000/data"
+
+    },
+    "deviceID": "5cecb6f5c17b7d2bb1adc67f",
+    "influx": {
+        "url": "http://192.168.77.236:8086/dataghost",
+        "measurement": "dht"
+    },
+    "sensors": {
+        "dht": {
+            "type": 11,
+            "pin": 2
+        },
+        "thermalZone": {
+            "file": "/sys/class/thermal/thermal_zone0/temp"
+        }
+    },
+    "controls":{
+        "led":{
+            "pin":5
+        },
+        "fan":{
+            "pin": 12
+        }
+    }
+}
